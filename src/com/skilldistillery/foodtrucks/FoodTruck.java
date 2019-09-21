@@ -40,6 +40,9 @@ public class FoodTruck {
 		this.rating = rating;
 	}
 	
+	// TODO s
+	
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
