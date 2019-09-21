@@ -1,25 +1,37 @@
 package com.skilldistillery.foodtrucks;
 
 public class FoodTruck {
-	private static int TRUCK_ID = 1;
+	private static int TRUCK_ID = 1001;
 	private String truckName;
 	private String foodType;
 	private int rating;
+	private int truckID;
 	
 	public FoodTruck() {
 		
 	}
 	public FoodTruck(String truckName, String foodType, int rating) {
+		this(truckName, foodType, rating, TRUCK_ID);
+	
+	}
+	
+	public FoodTruck(String truckName, String foodType, int rating, int truckId) {
 		this.truckName = truckName;
 		this.foodType = foodType;
 		this.rating = rating;
+		this.truckID = truckId;
+	}
 	
+
+	public int getTruckID() {
+		return truckID;
 	}
-	public static int getTRUCK_ID() {
-		return TRUCK_ID;
+	public void setTruckID(int truckID) {
+		this.truckID = truckID;
 	}
-	public static void setTRUCK_ID() {
+	public void setTRUCK_ID() {
 		TRUCK_ID ++;
+		
 	}
 	public String getTruckName() {
 		return truckName;
@@ -40,7 +52,7 @@ public class FoodTruck {
 		this.rating = rating;
 	}
 	
-	// TODO s
+	// TODO 
 	
 	
 	@Override
@@ -50,6 +62,7 @@ public class FoodTruck {
 				.append(", rating=").append(rating).append("]");
 		return builder.toString();
 	}
+
 	
 	
 	
