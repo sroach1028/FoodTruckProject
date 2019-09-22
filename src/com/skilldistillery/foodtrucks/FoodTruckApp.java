@@ -29,7 +29,7 @@ public class FoodTruckApp {
 		do {
 			displayMenu();
 			selection = kb.nextInt();
-
+			kb.nextLine();
 			switch (selection) {
 			case 1:
 				if (count == trucks.length) {
@@ -39,10 +39,10 @@ public class FoodTruckApp {
 				}
 				do {
 					System.out.print("Enter name of food truck: ");
-					name = kb.next();
+					name = kb.nextLine();
 
 					System.out.print("\nWhat type of food does " + name + " serve?: ");
-					foodType = kb.next();
+					foodType = kb.nextLine();
 
 					System.out.print("\nWhat would you rate " + name + "?: ");
 					rating = kb.nextInt();
@@ -54,12 +54,7 @@ public class FoodTruckApp {
 					if (count < trucks.length) {
 						displayMenu2();
 						selection2 = kb.nextInt();
-//						if (selection2 == 1) {
-//							continue;
-//						}
-//						else if(selection2==2){
-//							break;
-//						}
+						kb.nextLine();
 						switch (selection2) {
 						case 1:
 							continue;

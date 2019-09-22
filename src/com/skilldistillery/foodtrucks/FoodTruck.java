@@ -62,6 +62,7 @@ public class FoodTruck {
 				.append(", rating=").append(rating).append("]");
 		return builder.toString();
 	}
+	
 
 	
 	
