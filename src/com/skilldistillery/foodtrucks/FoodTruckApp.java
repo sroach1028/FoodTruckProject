@@ -4,13 +4,11 @@ import java.util.Scanner;
 
 public class FoodTruckApp {
 
-	// FIELDS
 
 	private static final int MAX_TRUCKS = 5;
 	FoodTruck[] trucks = new FoodTruck[MAX_TRUCKS];
 	private int count = 0;
 
-	// MAIN METHOD
 	public static void main(String[] args) {
 		FoodTruckApp fta = new FoodTruckApp();
 		System.out.println("\nWelcome to the Food Truck App!\n" + "-----------------------------------");
@@ -58,10 +56,19 @@ public class FoodTruckApp {
 			default:
 				System.out.print("\nDid not recognize choice. Enter any key to return to main menu: ");
 				kb.nextLine();
-			} // END OUTSIDE SWITCH
+			}
 		} while (!selection.equals("5"));
 
 		kb.close();
+	} // END OF RUN()
+
+	private void displayMenu() {
+		System.out.print(
+				"\n1. Add New Food Truck\n2. Show All Food Trucks\n3. Show Average Rating for All Trucks\n4. Show Highest Rated Truck(s)\n5. Quit Food Truck App\n--->");
+	}
+
+	private void displayMenu2() {
+		System.out.print("\n1. Add another truck\n2. Return to main menu\n--->");
 	}
 
 	private void newTruck(Scanner kb) {
@@ -96,13 +103,18 @@ public class FoodTruckApp {
 					continue;
 				case 2:
 					break;
-				} // END INSIDE SWITCH
+				}
 			} else {
 				System.out.print("All full up. Can not add any more trucks. Enter any key to return to main menu: ");
 				kb.nextLine();
 				break;
 			}
 		} while (selection2 == 1); // end of loop
+	} // END OF NEWTRUCK()
+
+	private void addTruck(FoodTruck truck) {
+		trucks[count] = truck;
+		count++;
 	}
 
 	private void displayTrucks() {
@@ -113,20 +125,6 @@ public class FoodTruckApp {
 			}
 
 		}
-	}
-
-	private void displayMenu() {
-		System.out.print(
-				"\n1. Add New Food Truck\n2. Show All Food Trucks\n3. Show Average Rating for All Trucks\n4. Show Highest Rated Truck(s)\n5. Quit Food Truck App\n--->");
-	}
-
-	private void displayMenu2() {
-		System.out.print("\n1. Add another truck\n2. Return to main menu\n--->");
-	}
-
-	private void addTruck(FoodTruck truck) {
-		trucks[count] = truck;
-		count++;
 	}
 
 	private void displayAverage() {
