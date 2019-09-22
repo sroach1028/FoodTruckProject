@@ -16,10 +16,10 @@ public class FoodTruck {
 	}
 	
 	public FoodTruck(String truckName, String foodType, int rating, int truckId) {
+		this.truckID = truckId;
 		this.truckName = truckName;
 		this.foodType = foodType;
 		this.rating = rating;
-		this.truckID = truckId;
 	}
 	
 
@@ -58,10 +58,12 @@ public class FoodTruck {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("FoodTruck [truckName=").append(truckName).append(", foodType=").append(foodType)
-				.append(", rating=").append(rating).append("]");
+		builder.append("FoodTruck# ").append(truckID).append("\t Truck Name: ").append(truckName)
+				.append("\t Food Type: ").append(foodType).append("\t Rating: ").append(rating);
 		return builder.toString();
 	}
+	
+	
 	
 
 	

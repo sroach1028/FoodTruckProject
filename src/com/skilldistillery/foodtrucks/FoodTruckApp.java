@@ -20,7 +20,7 @@ public class FoodTruckApp {
 
 	private void run() {
 		Scanner kb = new Scanner(System.in);
-		int selection;
+		String selection;
 		int selection2;
 		String name;
 		String foodType;
@@ -28,10 +28,10 @@ public class FoodTruckApp {
 		// TODO OUTSIDE do-while loop, print the menu, while selection is not "quit"
 		do {
 			displayMenu();
-			selection = kb.nextInt();
+			selection = kb.next();
 			kb.nextLine();
 			switch (selection) {
-			case 1:
+			case "1":
 				if (count == trucks.length) {
 					System.out.print("Can not hold any more trucks. Press any key to return to main menu: ");
 					kb.next();
@@ -69,28 +69,30 @@ public class FoodTruckApp {
 					}
 				} while (selection2 == 1); // end of inside loop
 				break;
-			case 2:
+			case "2":
 				displayTrucks();
 				System.out.print("\nEnter any key to return to main menu: ");
 				kb.next();
 				System.out.println("");
 				break;
-			case 3:
+			case "3":
 				displayAverage();
 				System.out.print("\nEnter any key to return to main menu: ");
 				kb.next();
 				break;
-			case 4:
+			case "4":
 				displayHighestRated();
 				System.out.print("\nEnter any key to return to main menu: ");
 				kb.next();
 				break;
-			case 5:
+			case "5":
 				System.out.println("Thanks for using the foodtruck app, don't forget to rate us too!");
 				break;
-
+			default:
+				System.out.print("\nDid not recognize choice. Enter any key to return to main menu: ");
+				kb.next();
 			} // END OUTSIDE SWITCH
-		} while (selection != 5);
+		} while (!selection.equals("5"));
 
 		kb.close();
 	}
@@ -99,8 +101,9 @@ public class FoodTruckApp {
 		System.out.println("");
 		for (FoodTruck truck : trucks) {
 			if (truck != null) {
-				System.out.println("ID: " + truck.getTruckID() + "\tName: " + truck.getTruckName() + "\tFood Type: "
-						+ truck.getFoodType() + "\t\tRating: " + truck.getRating());
+//				System.out.println("ID: " + truck.getTruckID() + "\tName: " + truck.getTruckName() + "\tFood Type: "
+//						+ truck.getFoodType() + "\t\tRating: " + truck.getRating());
+			System.out.println(truck.toString());
 			}
 
 		}
