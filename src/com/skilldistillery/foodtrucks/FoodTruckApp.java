@@ -13,8 +13,7 @@ public class FoodTruckApp {
 	// MAIN METHOD
 	public static void main(String[] args) {
 		FoodTruckApp fta = new FoodTruckApp();
-		System.out.println("\nWelcome to the Food Truck App!\n"
-				+ "-----------------------------------");
+		System.out.println("\nWelcome to the Food Truck App!\n" + "-----------------------------------");
 		fta.run();
 	}
 //                     WORKER METHODS
@@ -33,8 +32,7 @@ public class FoodTruckApp {
 					System.out.println("Can not hold any more trucks. Press any key to return to main menu: ");
 					kb.nextLine();
 					break;
-				} 
-				else {
+				} else {
 					newTruck(kb);
 					break;
 				}
@@ -74,8 +72,8 @@ public class FoodTruckApp {
 		do {
 			System.out.println("Enter name of food truck, or enter 'q' to return to the main menu: ");
 			name = kb.nextLine();
-			if (checkForQuit(name)){
-			break;
+			if (checkForQuit(name)) {
+				break;
 			}
 
 			System.out.println("What type of food does " + name + " serve?: ");
@@ -84,7 +82,7 @@ public class FoodTruckApp {
 			System.out.print("What would you rate " + name + "?: ");
 			rating = kb.nextInt();
 			kb.nextLine();
-			
+
 			FoodTruck newTruck = new FoodTruck(name, foodType, rating);
 			addTruck(newTruck);
 			newTruck.setTRUCK_ID();
@@ -161,27 +159,27 @@ public class FoodTruckApp {
 			}
 		}
 	}
-	
+
 	boolean checkForQuit(String name) {
 		boolean result = false;
-		switch(name) {
+		switch (name) {
 		case "q":
-		result = true;
-		break;
-	case "Q":
-		result = true;
-		break;
-	case "quit":
-		result = true;
-		break;
-	case "Quit":
-		result = true;
-		break;
-	case "QUIT":
-		result = true;
-		break;
+			result = true;
+			break;
+		case "Q":
+			result = true;
+			break;
+		case "quit":
+			result = true;
+			break;
+		case "Quit":
+			result = true;
+			break;
+		case "QUIT":
+			result = true;
+			break;
 		}
-		
+
 		return result;
 	}
 }
